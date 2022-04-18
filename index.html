@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <title>Desafio Genesis Erivaldo</title>
+  </head>
+  <body>
+    <div id="start-game">
+      <div id="modal-start">
+        <h1>Bem-vindo ao Genius</h1>
+        <p>
+          Você deve memorizar a sequencia que sera apresentada, e inseri-la na
+          ordem correta. <br />
+          Pode repetir a sequência, mas apenas um vez por nivel. <br />
+          Os circulos brilhantes são suas vidas, quando acabarem, você perde.
+          <br />
+          Você está pronto para começar o jogo?
+        </p>
+        <button id="start">iniciar</button>
+      </div>
+    </div>
+    <div class="start-game">
+      <div id="game-over">
+        <div id="modal-game-over">
+          <p>
+            Game over <br />
+            você perdeu
+          </p>
+          <button id="restart">Fechar</button>
+        </div>
+      </div>
+      <div id="lifes">
+        <div id="life1"></div>
+        <div id="life2"></div>
+        <div id="life3"></div>
+      </div>
+      <div class="score">Level</div>
+      <div class="repeat">
+        <button id="repeat-btn" title="repetir sequencia (apenas uma vez)">
+          <img
+            src="asset/images/repeatButton.png"
+            alt="repetir sequencia (apenas uma vez)"
+          />
+        </button>
+      </div>
+
+      <div class="nextLevel">
+        <div id="modal">
+          <p>
+            Parabéns! Você conseguiu completar o nível!
+            <br />
+            <br />
+            <button id="nextLevelButton">Próximo</button>
+          </p>
+        </div>
+      </div>
+      <div class="genius">
+        <div class="green"></div>
+        <div class="blue"></div>
+        <div class="yellow"></div>
+        <div class="red"></div>
+      </div>
+    </div>
+  </body>
+  <script src="main.js" defer></script>
+</html>

@@ -1,0 +1,236 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.start-game {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, #00e8fd, #ececec);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.genius {
+  height: 60rem;
+  width: 60rem;
+  background: white;
+  border-radius: 50%;
+  display: grid;
+  grid-template-areas:
+    "blue red"
+    "green yellow";
+  gap: 1rem;
+}
+
+.blue {
+  border-top-left-radius: 100%;
+  grid-area: blue;
+  background: rgb(0, 0, 179);
+}
+
+.yellow {
+  border-bottom-right-radius: 100%;
+  grid-area: yellow;
+  background: rgb(161, 161, 0);
+}
+
+.red {
+  border-top-right-radius: 100%;
+  grid-area: red;
+  background: rgb(174, 5, 5);
+}
+
+.green {
+  border-bottom-left-radius: 100%;
+  grid-area: green;
+  background: rgb(27, 155, 2);
+}
+
+.active {
+  box-shadow: 0rem 0rem 3rem rgb(246, 240, 162);
+
+  filter: brightness(3);
+}
+
+.score {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 5rem;
+  width: 20rem;
+}
+
+.repeat {
+  position: absolute;
+
+  top: 32rem;
+  left: 15rem;
+}
+
+.repeat button {
+  border-radius: 100%;
+  height: 9rem;
+  width: 9rem;
+  background: transparent;
+  border-style: none;
+}
+
+.repeat button:hover {
+  cursor: pointer;
+}
+
+.repeat button img {
+  object-fit: cover;
+  height: 7rem;
+  width: 7rem;
+}
+
+#lifes {
+  position: absolute;
+  background: transparent;
+  height: 5rem;
+  width: 15rem;
+  top: 3rem;
+  left: 3rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+#life1,
+#life2,
+#life3 {
+  height: 4rem;
+  width: 4rem;
+  background: radial-gradient(circle, #fd0000, #cb0000);
+
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+  animation: lifeAnimation alternate 1s infinite;
+}
+
+@keyframes lifeAnimation {
+  0% {
+    box-shadow: 0px 0px 0.5rem #fd0000e0;
+    filter: brightness(0.5);
+  }
+
+  100% {
+    box-shadow: 0px 0px 2rem #fd0000e0;
+    filter: brightness(1);
+  }
+}
+
+#life1 {
+  animation-delay: 0s;
+}
+#life2 {
+  animation-delay: 0.5s;
+}
+
+#life3 {
+  animation-delay: 1s;
+}
+
+#game-over,
+.nextLevel,
+#start-game {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.588);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#game-over.show,
+.nextLevel.show,
+#start-game.show {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+#modal-game-over,
+#modal,
+#modal-start {
+  background-color: rgb(255, 255, 255);
+
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+#modal-start {
+  font-size: 1.5rem;
+}
+
+#modal-game-over {
+  height: 20rem;
+  width: 60rem;
+}
+
+#modal {
+  height: 20rem;
+  width: 60rem;
+}
+
+#modal-game-over button {
+  color: rgb(215, 212, 212);
+  background: rgb(174, 5, 5);
+}
+
+#modal-game-over button:hover {
+  cursor: pointer;
+  background: #ff0645;
+}
+
+#modal button,
+#modal-game-over button,
+#modal-start button {
+  border-radius: 20%;
+  height: 5rem;
+  width: 9rem;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  border-style: none;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  transition: 0.2s ease-in-out;
+}
+#modal-start button {
+  background: #06ff3c;
+}
+
+#modal-start button {
+  background-color: #00d30e;
+}
+#modal-start button:hover {
+  background: #00fd11;
+}
+
+#modal button {
+  background: #00e8fd;
+}
+
+#modal button:hover {
+  background: #0b93c0;
+  cursor: pointer;
+}
